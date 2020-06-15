@@ -13,8 +13,10 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name="follow ig @renebaebae"))
 
 @bot.command(pass_context=True)
-async def ping(ctx):
-    await ctx.send(f'My ping is {bot.latency*1000}ms!')
+em = discord.Embed(color=discord.Color.pink())
+    em.title = "Pong!"
+    em.description = f'{bot.latency * 1000} ms'
+    await ctx.send(embed=em)
    
 if __name__ == "__main__":
     bot.run(TOKEN)
