@@ -19,7 +19,7 @@ async def ping(ctx):
     em.description = f'{bot.latency * 1000} ms'
     await ctx.send(embed=em)
 
-if match("<@!?435379055253127178>", message.content) is not None:
+if message.content.startswith('<@'):
     text = await client.send_message(message.channel, "Pesan telah dikirim")
     await client.send_message(message.channel, "Ummm")
     await client.edit_message(text, "Hai! Kamu telah di-mention di suatu server!")
