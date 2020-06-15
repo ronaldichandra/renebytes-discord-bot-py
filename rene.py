@@ -17,8 +17,12 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    if message.content.startswith("<@"):
-        await client.send_message(message.channel, "Ummm")
+    if message.content.startswith("@"):
+        user = message.mentions[0]
+        responses = ["{} says hello to {}", "{} says hi to {}", "{} waves to {}"]
+        choice = random.choice(responses)
+        choice = choice.format(message.author.mention, user.mention)
+        await client.send_message(message.channel, choice)
 
 @bot.command(pass_context=True)
 async def ping(ctx):
