@@ -1,8 +1,9 @@
 # Work with Python 3.6
 import discord
+import os
 
 client = discord.Client()
-TOKEN = discord.getenv("TOKEN")
+TOKEN = os.getenv("TOKEN")
 
 @client.event
 async def on_message(message):
