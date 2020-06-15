@@ -14,8 +14,11 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name="follow ig @renebaebae"))
 
 async def on_message(message):
+    if message.author == client.user:
+        return
+    
     if message.content.startswith('<@'):
-    await client.send_message(message.channel, "Ummm")
+        await client.send_message(message.channel, "Ummm")
 
 @bot.command(pass_context=True)
 async def ping(ctx):
