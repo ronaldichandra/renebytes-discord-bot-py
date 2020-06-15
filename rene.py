@@ -1,7 +1,6 @@
 import os
 import discord
 import time
-from datetime import datetime
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix=".")
@@ -14,9 +13,8 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name="follow ig @renebaebae"))
 
 @bot.command(pass_context=True)
-async def ping(ctx):
-    ms = (timestamp-ctx.message.timestamp).total_seconds() * 1000
-    await ctx.send('Pong! {0}ms'.format(int(ms)))
-
+def ping(ctx):
+    await ctx.send(f'My ping is {bot.latency}!')
+   
 if __name__ == "__main__":
     bot.run(TOKEN)
