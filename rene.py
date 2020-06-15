@@ -1,4 +1,5 @@
 import os
+import asyncio
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix=".")
@@ -7,9 +8,9 @@ TOKEN = os.getenv("TOKEN")
 async def status_task():
     while True:
         await bot.change_presence(game=discord.Game(name='follow ig @renebaebae')
-        await asyncio.sleep(10)
+        await asyncio.sleep(2)
         await bot.change_presence(game=discord.Game(name='sama ronhyun')
-        await asyncio.sleep(10)
+        await asyncio.sleep(2)
 
 @bot.event
 async def on_ready():
