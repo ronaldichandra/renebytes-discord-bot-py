@@ -14,7 +14,6 @@ async def on_ready():
 
 @bot.command()
 async def ping(ctx):
-    await delete_message(ctx.message)
     before = time.monotonic()
     message = await ctx.send("Pong!")
     ping = (time.monotonic() - before) * 1000
