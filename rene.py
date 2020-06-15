@@ -2,6 +2,7 @@
 import discord
 
 client = discord.Client()
+TOKEN = os.getenv("TOKEN")
 
 @client.event
 async def on_message(message):
