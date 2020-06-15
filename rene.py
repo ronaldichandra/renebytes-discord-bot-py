@@ -6,9 +6,9 @@ TOKEN = os.getenv("TOKEN")
 
 async def status_task():
     while True:
-        await test_bot.change_presence("follow ig @renebaebae")
+        await bot.change_presence("follow ig @renebaebae")
         await asyncio.sleep(10)
-        await test_bot.change_presence("sama ronhyun")
+        await bot.change_presence("sama ronhyun")
         await asyncio.sleep(10)
 
 @bot.event
