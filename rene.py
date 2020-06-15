@@ -13,7 +13,8 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name="follow ig @renebaebae"))
 
 @bot.command(pass_context=True)
-em = discord.Embed(color=discord.Colour.pink())
+async def ping(ctx):
+    em = discord.Embed(color=discord.Colour.pink())
     em.title = "Pong!"
     em.description = f'{bot.latency * 1000} ms'
     await ctx.send(embed=em)
