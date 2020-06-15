@@ -13,12 +13,8 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name="follow ig @renebaebae"))
 
 @bot.command()
-async def ping(ctx):
-    before = time.monotonic()
-    message = await ctx.send("Pong!")
-    ping = (time.monotonic() - before) * 1000
-    await message.edit(content=f"Pong!  `{int(ping)}ms`")
-    print(f'Ping {int(ping)}ms')
+async def ping(self, ctx):
+        await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
 if __name__ == "__main__":
     bot.run(TOKEN)
