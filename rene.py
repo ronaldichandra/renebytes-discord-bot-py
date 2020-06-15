@@ -1,25 +1,16 @@
-# Work with Python 3.6
-import discord
 import os
+from discord.ext import commands
 
-client = discord.Client()
-TOKEN = os.getenv("TOKEN")
+bot = commands.Bot(command_prefix="!")
+TOKEN = os.getenv("DISCORD_TOKEN")
 
-@client.event
-async def on_message(message):
-    # we do not want the bot to reply to itself
-    if message.author == client.user:
-        return
-
-    if message.content.startswith('!hello'):
-        msg = 'Hello {0.author.mention}'.format(message)
-        await client.send_message(message.channel, msg)
-
-@client.event
+@bot.event
 async def on_ready():
-    print('Masuk sebagai')
-    print(client.user.name)
-    print(client.user.id)
-    print('------')
+    print("Masuk sebagai {}({})".format(bot.user.name, bot.user.id))
 
-client.run(TOKEN)
+@bot.command()
+async def ping(ctx):
+    await ctx.send("pong")
+
+if __name__ == "__main__":
+    bot.run(TOKEN)
