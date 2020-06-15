@@ -17,7 +17,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    if match("<@!?435379055253127178>", message.content) is not None:
+    if match("<@", message.content) is not None:
         user = message.mentions[0]
         responses = ["{} says hello to {}", "{} says hi to {}", "{} waves to {}"]
         choice = random.choice(responses)
