@@ -22,7 +22,7 @@ async def ping(ctx):
 async def woi(ctx):
     member = message.mentions[0] # Probably in a try block
     content = "{0.mention} ... {1.author.mention}".format(member, message)
-    await bot.send_message(..., content)
+    await ctx.send_message(..., content)
 
 if __name__ == "__main__":
     bot.run(TOKEN)
