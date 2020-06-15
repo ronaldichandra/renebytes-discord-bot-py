@@ -17,7 +17,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    if message.content.startswith('<@'):
+    if message.content.startswith("<@"):
         await client.send_message(message.channel, "Ummm")
 
 @bot.command(pass_context=True)
