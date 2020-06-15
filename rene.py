@@ -14,7 +14,7 @@ async def on_ready():
 
 @bot.command(pass_context=True)
 async def ping(ctx):
-    await ctx.send(f'My ping is {bot.latency}!')
+    await ctx.send(f'My ping is {bot.latency*1000}ms!')
    
 if __name__ == "__main__":
     bot.run(TOKEN)
