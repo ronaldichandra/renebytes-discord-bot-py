@@ -2,6 +2,7 @@ import os
 import discord
 import time
 from discord.ext import commands
+client = discord.Client()
 
 bot = commands.Bot(command_prefix=".")
 TOKEN = os.getenv("TOKEN")
@@ -20,7 +21,7 @@ async def ping(ctx):
     await ctx.send(embed=em)
 
 if message.content.startswith('<@'):
-    await bot.send_message(message.channel, "Ummm")
+    await client.send_message(message.channel, "Ummm")
 
 if __name__ == "__main__":
     bot.run(TOKEN)
