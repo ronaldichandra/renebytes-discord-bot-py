@@ -20,9 +20,8 @@ async def ping(ctx):
     await ctx.send(embed=em)
 
 if message.content.startswith('<@'):
-    text = await client.send_message(message.channel, "Pesan telah dikirim")
     await client.send_message(message.channel, "Ummm")
-    await client.edit_message(text, "Hai! Kamu telah di-mention di suatu server!")
+    await client.semd_message(message, "Hai! Kamu telah di-mention di suatu server!")
 
 if __name__ == "__main__":
     bot.run(TOKEN)
