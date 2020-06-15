@@ -14,7 +14,7 @@ async def on_ready():
 
 @bot.command(pass_context=True)
 async def ping(ctx):
-    em = discord.Embed(color=discord.Colour.pink())
+    em = discord.Embed(color=discord.Colour.magenta())
     em.title = "Pong!"
     em.description = f'{bot.latency * 1000} ms'
     await ctx.send(embed=em)
