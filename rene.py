@@ -13,7 +13,7 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name="follow ig @renebaebae"))
 
 @bot.command(pass_context=True)
-def ping(ctx):
+async def ping(ctx):
     await ctx.send(f'My ping is {bot.latency}!')
    
 if __name__ == "__main__":
