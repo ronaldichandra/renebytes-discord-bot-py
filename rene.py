@@ -19,10 +19,10 @@ async def ping(ctx):
     em.description = f'{bot.latency * 1000} ms'
     await ctx.send(embed=em)
 
-async def woi(ctx):
-    member = message.mentions[0] # Probably in a try block
-    content = "{0.mention} ... {1.author.mention}".format(member, message)
-    await ctx.send_message(..., content)
+if match("<@!?435379055253127178>", message.content) is not None:
+    text = await client.send_message(message.channel, "Pesan telah dikirim")
+    await client.send_message(message.channel, "Ummm")
+    await client.edit_message(text, "Hai! Kamu telah di-mention di suatu server!")
 
 if __name__ == "__main__":
     bot.run(TOKEN)
