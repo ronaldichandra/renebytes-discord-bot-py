@@ -12,7 +12,7 @@ async def on_ready():
     print("Masuk sebagai {}({})".format(bot.user.name, bot.user.id))
     await bot.change_presence(activity=discord.Game(name="follow ig @renebaebae"))
 
-@bot.command()
+@bot.command(pass_context=True)
 async def ping(self, ctx):
         await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
