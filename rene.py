@@ -18,7 +18,7 @@ async def on_message(message):
         return
     
 async def on_message(message):
-    if client.user.mention in message.content.split():
+    if bot.user.mention in message.content.split():
         await message.channel.send('You mentioned me!')
 
 @bot.command(pass_context=True)
