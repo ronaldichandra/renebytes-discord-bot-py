@@ -17,11 +17,9 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    if message.content.startswith(f'{bot.user.mention}'):
-        em = discord.Embed(color=discord.Colour.magenta())
-        em.title = "Pong!"
-        em.description = f'Type .help for more details.'
-        await bot.send_message(message.channel, embed=em)
+async def on_message(message):
+    if client.user.mention in message.content.split():
+        await message.channel.send('You mentioned me!')
 
 @bot.command(pass_context=True)
 async def ping(ctx):
