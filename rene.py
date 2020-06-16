@@ -17,12 +17,8 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    if match("<@", message.content) is not None:
-        user = message.mentions[0]
-        responses = ["{} says hello to {}", "{} says hi to {}", "{} waves to {}"]
-        choice = random.choice(responses)
-        choice = choice.format(message.author.mention, user.mention)
-        await client.send_message(message.channel, choice)
+    if bot.user.mentioned_in(message) in message.content:
+        await bot.send_message(message.channel, f'Ketik .help gan')
 
 @bot.command(pass_context=True)
 async def ping(ctx):
