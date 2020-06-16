@@ -17,8 +17,11 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    if bot.user.mentioned_in(message) in message.content:
-        await bot.send_message(message.channel, f'Ketik .help gan')
+    if message.content.startswith(f'{bot.user.mention}'):
+        em = discord.Embed(color=discord.Colour.magenta())
+        em.title = "Pong!"
+        em.description = f'Type .help for more details.'
+        await bot.send_message(message.channel, embed=em)
 
 @bot.command(pass_context=True)
 async def ping(ctx):
